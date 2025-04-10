@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-primary: 'Quicksand', sans-serif;
+  --color-bg: #0f0f0f;
+  --color-text: #f3f3f3;
+  --color-accent: #ff69b4;
+  --color-highlight: #ffd700;
+  --color-box: rgba(255, 255, 255, 0.12);
+  --shadow-glow: 0 0 18px rgba(255, 255, 255, 0.15);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.container-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.content {
+  width: 100%;
+  max-width: 800px;
+}
+
+.happy__content h1.birthday-heading {
+  font-size: 3rem;
+  text-align: center;
+  background: linear-gradient(90deg, #ff4d4d, #ffa64d, #ffff4d, #4dff88, #4dd2ff, #b84dff, #ff4d88);
+  background-size: 400% 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: rainbow-text 6s ease infinite;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);
+}
+
+.happy__content p {
+  font-size: 1.8rem;
+  color: #ffeef7;
+  text-align: left;
+  line-height: 1.75;
+  background: var(--color-box);
+  padding: 2rem;
+  border-radius: 1.4rem;
+  box-shadow: var(--shadow-glow);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.countdown__content .headline h1.rainbow-countdown {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff4d4d, #ff9966, #ffff66, #66ff99, #66ccff, #cc99ff, #ff66cc);
+  background-size: 400% 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: rainbow-text 5s ease infinite;
+  text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.2);
+  margin: 0.8rem 0;
+  white-space: normal;
+}
+
+.countdown__content .subline h2 {
+  font-size: 2rem;
+  margin-bottom: 1.6rem;
+  color: #dddddd;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.4rem;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  background: var(--color-box);
+  padding: 1.2rem 2rem;
+  border-radius: 1.4rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  min-width: 80px;
+  box-shadow: var(--shadow-glow);
+  color: #ffe6f1;
+}
+
+li span {
+  display: block;
+  font-size: 2.2rem;
+  color: #ffffff;
+}
+
+.stickers img {
+  width: 80px;
+  margin: 10px;
+}
+
+.container-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rainbow-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 600px) {
+  .container-content {
+    padding: 1rem;
+  }
+
+  ul li {
+    padding: 1rem;
+    min-width: 60px;
+  }
+
+  .happy__content p {
+    font-size: 1.6rem;
+    padding: 1.6rem;
+    line-height: 1.6;
+  }
+
+  .happy__content h1.birthday-heading {
+    font-size: 2.4rem;
+  }
+
+  .headline h1.rainbow-countdown {
+    font-size: 2.2rem;
+  }
+}
